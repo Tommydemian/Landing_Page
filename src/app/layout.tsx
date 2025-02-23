@@ -6,7 +6,7 @@ const barlow = Barlow({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-barlow",
-  weight: ["400", "500", "600"]
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -21,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${barlow.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${barlow.variable} antialiased`}>{children}</body>
     </html>
   );
 }
@@ -68,4 +64,3 @@ export default function RootLayout({
 //         </html>
 //     );
 // }
-
