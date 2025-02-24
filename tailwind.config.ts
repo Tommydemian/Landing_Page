@@ -43,6 +43,7 @@ export default {
             },
             spacing: {
                 "header-height": "var(--header-height)",
+                section: "5rem",
             },
         },
     },

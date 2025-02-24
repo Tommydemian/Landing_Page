@@ -153,8 +153,9 @@
 	#hero-section {
 		background-image: url("./components/sections/hero/hero-bg-img.webp");
 		/* padding: 20em; */
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
+		background-position: bottom center;
 	}
 
 	.button-base {
