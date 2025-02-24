@@ -1,7 +1,13 @@
-export default function Home() {
+import { Container } from "./components/layout/ui/Container";
+import { HeroSection } from "./components/sections/hero/HeroSection";
+
+export default function HomePage() {
     return (
-        <div className="grid min-h-screen grid-rows-[20px_1fr_20px] place-items-center items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] capitalize sm:p-20 md:flex">
-            <p>tag </p>
-        </div>
+        <main className="pt-header-height">
+            <Container>
+                <HeroSection />
+            </Container>
+            <section className="min-h-screen">d</section>
+        </main>
     );
 }
