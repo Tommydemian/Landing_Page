@@ -4,7 +4,9 @@ import { ServicesSection } from "./components/sections/services/ServicesSection"
 export default function HomePage() {
     return (
         <main className="pt-header-height">
-            <HeroSection />
+            <div className="hero-section-wrapper">
+                <HeroSection />
+            </div>
             <ServicesSection />
         </main>
     );
