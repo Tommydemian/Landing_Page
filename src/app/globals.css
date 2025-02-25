@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
-
 	/* Typography */
 	--fs-200: 0.875rem; /*  14px  */
 	--fs-300: 1rem; /* 16px */
@@ -31,19 +28,39 @@
 	--fs-heading-primary-md: var(--fs-850);
 	--fs-heading-primary-lg: var(--fs-900);
 
+	--fs-heading-primary-text: clamp(
+		var(--fs-heading-primary-sm),
+		3.5vw,
+		var(--fs-heading-primary-lg)
+	);
+
 	--fs-heading-secondary-sm: var(--fs-600);
 	--fs-heading-secondary-md: var(--fs-750);
 	--fs-heading-secondary-lg: var(--fs-850);
+
+	/* Card Heading */
+	--fs-card-heading-sm: var(--fs-500);
+	--fs-card-heading-md: var(--fs-600);
+	--fs-card-heading-lg: var(--fs-750);
+
+	--fs-card-heading-text: clamp(
+		var(--fs-card-heading-sm),
+		2.8vw,
+		var(--fs-card-heading-lg)
+	);
+
 	/* Body */
 	--fs-body-sm: var(--fs-200);
 	--fs-body-md: var(--fs-300);
 	--fs-body-lg: var(--fs-400);
 
-	--fs-body-text: clamp(var(--fs-body-sm, ), 3.5vw, var(--fs-body-lg));
+	/* --fs-body-text: clamp(var(--fs-body-sm), 1.75vw, var(--fs-body-lg)); */
 
 	--fs-sub-heading-sm: var(--fs-body-sm);
 	--fs-sub-heading-md: var(--fs-body-md);
 	--fs-sub-heading-lg: var(--fs-body-lg);
+
+	--fs-sub-heading-text: clamp(var(--fs-sub-heading-sm, ), 3.5vw, var(--fs-sub-heading-lg));
 
 	/* Hero Tags */
 	--fs-tag-sm: var(--fs-body-md);
@@ -90,15 +107,19 @@
 
 	--clr-background-primary: var(--clr-neutral-700);
 	--clr-background-secondary: var(--clr-neutral-400);
+	--clr-background-tertiary: var(--clr-neutral-600);
+
+	--clr-border-base: var(--clr-neutral-600);
 
 	--clr-tag: var(--clr-neutral-300);
 
 	/* Border Radius */
-	--br-sm: 0.375rem;
-	--br-md: 0.5rem;
+	--br-sm: 0.375rem; /* 6px */
+	--br-md: 0.5rem; /* 8px */
 
 	/* Sizes */
 
+	--size-30: 1.875rem;
 	--header-height: 4rem;
 	--button-height: 2rem;
 }
@@ -166,6 +187,13 @@
 		@apply border border-tag-box-border bg-secondary backdrop-blur-tag-box;
 	}
 
+	.fluid-body-fs {
+		@apply text-body-sm md:text-body-md xl:text-body-lg
+	}
+	.fluid-card-heading-fs {
+		@apply text-card-heading-sm md:text-card-heading-md xl:text-card-heading-lg
+	}
+
 	/* Header & Navigation */
 
 	.header-checkbox__label > .x,
@@ -191,11 +219,13 @@
 			inset: 0;
 			height: calc(100vh - var(--header-height));
 			top: var(--header-height);
+			pointer-events: none;
 		}
 		.header-container:has(#menu-toggle:checked) .nav {
 			overflow: auto;
 			background-color: var(--clr-background-primary);
 			opacity: 1;
+			pointer-events: auto;
 		}
 	}
 
@@ -219,4 +249,41 @@
 			opacity: 1;
 		}
 	}
+
+	/*------ Services ------ */
+
+	.services-heading__wrapper {
+		position: relative;
+	}
+
+	.services-heading__wrapper::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-color: #acff2433;
+		background-image: url("./components/sections/services/save.webp");
+		background-position: center center;
+		background-repeat: no-repeat;
+		filter: brightness(7.5%) hue-rotate(220deg);
+		/* filter: grayscale(100%); */
+		z-index: 0;
+		mix-blend-mode: screen;
+	}
+
+	.services-heading__wrapper > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.card-icon-border {
+		border: 1px solid;
+
+		border-image-source: linear-gradient(
+			180deg,
+			#2e2e2e 0%,
+			rgba(46, 46, 46, 0) 100%
+		);
+	}
+
+
 }
