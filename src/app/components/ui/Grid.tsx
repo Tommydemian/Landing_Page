@@ -3,20 +3,22 @@ import { portfolioProjects } from "@/data/projects";
 
 export const MasonryGrid = () => {
     return (
-        <ul className="grid grid-cols-[1fr_1fr_1fr] gap-8">
+        <ul className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_1fr_1fr]">
             {portfolioProjects.map((p) => (
                 <li className="overflow-clip rounded-sm bg-tertiary" key={p.id}>
-                    <div>
+                    <figure>
                         <Image src={p.imageUrl} alt={p.title} width={2000} height={2000} />
-                    </div>
-                    <p className="fluid-body-fs text-body">{p.description}</p>
-                    <div className="fluid-body-fs flex gap-x-2 bg-secondary text-body">
-                        {p.technologies.map((p) => (
-                            <p className="font-bold italic" key={p}>
-                                {p}
-                            </p>
-                        ))}
-                    </div>
+                    </figure>
+                    <figcaption className="fluid-body-fs text-body">
+                        <p>{p.description}</p>
+                        <div className="flex gap-x-2">
+                            {p.technologies.map((p) => (
+                                <p className="font-bold italic" key={p}>
+                                    {p}
+                                </p>
+                            ))}
+                        </div>
+                    </figcaption>
                 </li>
             ))}
         </ul>
