@@ -14,7 +14,7 @@ export const Button: FC<ButtonProps> = ({ children, variant, className, ...props
         <button
             className={cn(
                 "button-base rounded-lg",
-                isOutline ? "bg-secondary-composition text-white" : "bg-accent text-body-inverse",
+                isOutline ? "cursor-pointer bg-secondary-composition text-white" : "bg-accent text-body-inverse",
                 className,
             )}
             {...props}

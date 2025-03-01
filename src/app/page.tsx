@@ -1,6 +1,7 @@
 import { HeroSection } from "./components/sections/hero/HeroSection";
 import { ServicesSection } from "./components/sections/services/ServicesSection";
 import { MasonryGrid } from "./components/ui/Grid";
+import { ContactUsSection } from "./components/sections/contact-us/ContactUsSection";
 
 export default function HomePage() {
     return (
@@ -10,6 +11,7 @@ export default function HomePage() {
             </div>
             <ServicesSection />
             <MasonryGrid />
+            <ContactUsSection />
         </main>
     );
 }

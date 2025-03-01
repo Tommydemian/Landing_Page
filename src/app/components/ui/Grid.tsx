@@ -1,27 +1,28 @@
 import Image from "next/image";
+import { Container } from "../layout/ui/Container";
 import { portfolioProjects } from "@/data/projects";
 
 export const MasonryGrid = () => {
     return (
-        <ul className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_1fr_1fr]">
-            {portfolioProjects.map((p) => (
-                <li className="overflow-clip rounded-sm bg-tertiary" key={p.id}>
-                    <figure>
+        <Container className="px-4">
+            <div className="masonry-grid">
+                {portfolioProjects.map((p) => (
+                    <figure key={p.id} className="items-center gap-x-2 overflow-clip rounded-sm bg-tertiary">
                         <Image src={p.imageUrl} alt={p.title} width={2000} height={2000} />
+                        <figcaption className="fluid-body-fs text-body">
+                            <p>{p.description}</p>
+                            <div className="flex gap-x-2">
+                                {p.technologies.map((tech) => (
+                                    <p className="font-bold italic" key={tech}>
+                                        {tech}
+                                    </p>
+                                ))}
+                            </div>
+                        </figcaption>
                     </figure>
-                    <figcaption className="fluid-body-fs text-body">
-                        <p>{p.description}</p>
-                        <div className="flex gap-x-2">
-                            {p.technologies.map((p) => (
-                                <p className="font-bold italic" key={p}>
-                                    {p}
-                                </p>
-                            ))}
-                        </div>
-                    </figcaption>
-                </li>
-            ))}
-        </ul>
+                ))}
+            </div>
+        </Container>
     );
 };
 

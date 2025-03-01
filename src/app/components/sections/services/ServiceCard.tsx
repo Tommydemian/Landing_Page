@@ -30,24 +30,17 @@ const fadeInAnimationVariants = {
 
 export const ServiceCard: FC<ServiceCardProps> = ({ card, i }) => {
     return (
-        <motion.li
+        <motion.div
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
             custom={i}
             viewport={{ once: true }}
-            className="h-full border border-b-base"
+            className="service-card border border-b-base p-30 md:h-full md:gap-y-4"
         >
-            {
-                <motion.div
-                    variants={fadeInAnimationVariants}
-                    className="grid gap-y-6 p-30 md:h-full md:grid-rows-[auto_1fr_auto] md:gap-y-4"
-                >
-                    <ServiceCardHeading icon={card.icon} title={card.title} />
-                    <p className="fluid-body-fs text-body-clr">{card.body}</p>
-                    <ServiceCardCta cta={card.cta} />
-                </motion.div>
-            }
-        </motion.li>
+            <ServiceCardHeading icon={card.icon} title={card.title} />
+            <p className="fluid-body-fs text-body-clr">{card.body}</p>
+            <ServiceCardCta cta={card.cta} />
+        </motion.div>
     );
 };
