@@ -48,7 +48,7 @@ export const ContactUsSection = () => {
         <section>
             <Container className="my-section">
                 <SectionHeading
-                    headingText="Thank you for your Interest in SquareUp."
+                    headingText="Thank you for your Interest in Aviren Studio."
                     subheadingText="We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us."
                     n={4}
                     logo={<Codepen size={30} />}
