@@ -4,7 +4,7 @@ import { Button } from "../../layout/ui/Button";
 
 export const HeroSection = () => {
     return (
-        <section id="hero-section" className="h-[566px] w-full space-y-8 pt-section xl:h-[691px]">
+        <section id="hero-section" className="h-[566px] min-h-screen w-full space-y-8 pt-section xl:h-[691px]">
             <DisplayText>A Digital Product Studio that will Work</DisplayText>
             <HeroTagline />
             <div className="flex items-center justify-center gap-x-3">
