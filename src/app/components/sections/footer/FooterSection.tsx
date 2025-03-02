@@ -34,7 +34,7 @@ const FooterSection = () => {
         <div className='flex gap-5 items-center'>
             <div className='flex items-center gap-2'>
                 <Image src='/mail.svg' alt='logo' width={20} height={20} />
-                <span>hello@squareup.com</span>
+                <span>hello@aviren.com</span>
             </div>
 
             <div className='flex items-center gap-2'>
