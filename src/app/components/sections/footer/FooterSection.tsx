@@ -1,0 +1,36 @@
+import React from 'react'
+import { Container } from '../../layout/ui/Container'
+import Image from 'next/image'
+
+const FooterSection = () => {
+  return (
+    <Container className='my-section p-5 w-full'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+        <Image className='col-span-1' src='/footer-logo.svg' alt='logo' width={100} height={100} />
+        <div className='col-span-2 flex justify-between'>
+            <div className='flex gap-10 w-full'>
+            <a href='/' className='text-gray-400 hover:text-white transition-all'>Home</a>
+            <a href='/' className='text-gray-400 hover:text-white transition-all'>Services</a>
+            <a href='/' className='text-gray-400 hover:text-white transition-all'>Work</a>
+            <a href='/' className='text-gray-400 hover:text-white transition-all'>About</a>
+            <a href='/' className='text-gray-400 hover:text-white transition-all'>Contact</a>
+            </div>
+
+            <div className='flex gap-5'>
+            <a>
+                <Image src='/facebook.svg' alt='facebook' width={20} height={20} />
+            </a>
+            <a>
+                <Image src='/twitter.svg' alt='twitter' width={20} height={20} />
+            </a>  
+            <a>
+                <Image src='/linkedin.svg' alt='instagram' width={20} height={20} />
+            </a>
+            </div>
+        </div>
+      </div>
+    </Container>
+  )
+}
+
+export default FooterSection

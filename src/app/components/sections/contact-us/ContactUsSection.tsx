@@ -89,12 +89,24 @@ export const ContactUsSection = () => {
             <label className="text-white font-semibold text-lg block mb-4">
               Why are you contacting us?
             </label>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {[
-                { key: "webDesign", label: "Web Design" },
-                { key: "collaboration", label: "Collaboration" },
-                { key: "mobileApp", label: "Mobile App Design" },
-                { key: "others", label: "Others" },
+                {
+                  key: "webDesign" as keyof typeof formData.reasons,
+                  label: "Web Design",
+                },
+                {
+                  key: "collaboration" as keyof typeof formData.reasons,
+                  label: "Collaboration",
+                },
+                {
+                  key: "mobileApp" as keyof typeof formData.reasons,
+                  label: "Mobile App Design",
+                },
+                {
+                  key: "others" as keyof typeof formData.reasons,
+                  label: "Others",
+                },
               ].map(({ key, label }) => (
                 <Checkbox
                   key={key}

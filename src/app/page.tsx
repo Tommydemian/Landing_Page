@@ -3,6 +3,7 @@ import { ServicesSection } from "./components/sections/services/ServicesSection"
 import { LogosSection } from "./components/sections/logos/LogosSection";
 import { MasonryGrid } from "./components/layout/ui/Grid";
 import { ContactUsSection } from "./components/sections/contact-us/ContactUsSection";
+import FooterSection from "./components/sections/footer/FooterSection";
 
 export default function HomePage() {
     return (
@@ -14,6 +15,7 @@ export default function HomePage() {
             <ServicesSection />
             <MasonryGrid />
             <ContactUsSection />
+            <FooterSection />
         </main>
     );
 }
