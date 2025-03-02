@@ -343,7 +343,7 @@
 		--speed: 25s;
 		--single-slide-speed: calc(var(--speed) / var(--numItems));
 
-		--item-width: 150px;
+		--item-width: 100px;
 		--track-width: calc(var(--item-width) * var(--numItems)); 
 
 		
@@ -352,7 +352,7 @@
 	}
 	@media screen and (min-width: 768px)  {
 		.marquee {
-		 --item-width: 200px; 
+		 --item-width: 125px; 
 	}
 	}
 	
