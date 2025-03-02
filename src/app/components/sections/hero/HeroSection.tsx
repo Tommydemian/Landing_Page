@@ -8,10 +8,10 @@ export const HeroSection = () => {
             <DisplayText>A Digital Product Studio that will Work</DisplayText>
             <HeroTagline />
             <div className="flex items-center justify-center gap-x-3">
-                <Button variant="outline" type="button">
+                <Button variant="outline">
                     Our Works
                 </Button>
-                <Button variant="accent" type="button">
+                <Button variant="accent">
                     Contact Us
                 </Button>
             </div>
