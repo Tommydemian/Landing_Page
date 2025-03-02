@@ -43,7 +43,7 @@ const FooterSection = () => {
             </div>
         </div>
         <div>
-        © 2023 Aviren Studio. All rights reserved.
+        © 2025 Aviren Studio. All rights reserved.
         </div>
       </div>
     </Container>
