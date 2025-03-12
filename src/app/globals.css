@@ -180,7 +180,7 @@
 	@media screen and (min-width: 768px) {
 		#hero-section {
 			background-size: contain;
-		}	
+		}
 	}
 	.hero-section-wrapper {
 		position: relative;
@@ -191,7 +191,7 @@
 	}
 
 	.texture-bg {
-		background-color: #DFDBE5;
+		background-color: #dfdbe5;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%239C92AC' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 	}
 
@@ -204,10 +204,10 @@
 	}
 
 	.fluid-body-fs {
-		@apply text-body-sm md:text-body-md xl:text-body-lg
+		@apply text-body-sm md:text-body-md xl:text-body-lg;
 	}
 	.fluid-card-heading-fs {
-		@apply text-card-heading-sm md:text-card-heading-md xl:text-card-heading-lg
+		@apply text-card-heading-sm md:text-card-heading-md xl:text-card-heading-lg;
 	}
 
 	/* Header & Navigation */
@@ -285,7 +285,6 @@
 		z-index: 0;
 		mix-blend-mode: screen;
 	}
-	
 
 	.services-heading__wrapper > * {
 		position: relative;
@@ -308,11 +307,11 @@
 		grid-template-rows: repeat(3, auto);
 		gap: 1rem;
 	}
-	
+
 	@media (min-width: 768px) {
-	.with-subgrid {
-		grid-template-columns: repeat(3, auto);
-	  }
+		.with-subgrid {
+			grid-template-columns: repeat(3, auto);
+		}
 	}
 
 	.service-card {
@@ -321,57 +320,54 @@
 		grid-row: span 3;
 	}
 
-
 	.masonry-grid {
-	  display: grid;
-	  grid-template-columns:  1fr;
-	  gap: 2rem;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
 	}
 
 	@media screen and (min-width: 768px) {
 		.masonry-grid {
-		  display: grid;
-		  grid-template-columns: 1fr 1fr 1fr;
-		  gap: 2rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 2rem;
 		}
 	}
 
 	/*---------- Marquee ----------*/
-	   .marquee {
-		   max-width: 1800px;
-		   overflow: hidden;
+	.marquee {
+		max-width: 1800px;
+		overflow: hidden;
 		--speed: 25s;
 		--single-slide-speed: calc(var(--speed) / var(--numItems));
 
 		--item-width: 100px;
-		--track-width: calc(var(--item-width) * var(--numItems)); 
+		--track-width: calc(var(--item-width) * var(--numItems));
 
-		
 		/* outline: 1px solid lime; */
 		/* margin-left: 400px; */
 	}
-	@media screen and (min-width: 768px)  {
+	@media screen and (min-width: 768px) {
 		.marquee {
-		 --item-width: 125px; 
+			--item-width: 125px;
+		}
 	}
-	}
-	
+
 	.marquee-track {
 		display: grid;
 		width: max-content;
-		grid-template-columns: var(--track-width)[track] 0px[resting];
+		grid-template-columns: var(--track-width) [track] 0px [resting];
 		/* outline: 1px solid red; */
 		container-type: inline-size;
-	  }
-	  
-	  .marquee-item {
+	}
+
+	.marquee-item {
 		grid-area: resting;
 		animation: marquee-move var(--speed) linear infinite;
 		animation-delay: calc(var(--single-slide-speed) * var(--item-position) * -1);
-		 
-		
+
 		width: var(--item-width);
-		aspect-ratio: 1/1.1;
+		aspect-ratio: 1 / 1.1;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -379,28 +375,56 @@
 		border-radius: 2rem;
 		/* background-color: rgba(255, 255, 255, 0.1); */
 		color: var(--clr-neutral-100);
-	  }
-	  
-	  .marquee-item svg {
+	}
+
+	.marquee-item svg {
 		height: auto;
 		width: 50%;
-	  }
+	}
 
-	  .fadeout-horizontal {
+	.fadeout-horizontal {
 		mask-image: linear-gradient(
 			to right,
-			transparent, 
+			transparent,
 			black 5rem,
-			black calc(100% - 5rem), 
+			black calc(100% - 5rem),
 			transparent
 		);
-	  }
+	}
 
-	  @keyframes marquee-move {
+	@keyframes marquee-move {
 		to {
 			transform: translateX(calc(-100cqw - 100%));
-		} 
-	  }
-	  
-	
+		}
+	}
+
+	/* Cursor */
+	.cursor-dot {
+		width: 1rem;
+		height: 1rem;
+		background-color: rgba(125, 211, 252, 0.8);
+		outline: solid 2px rgba(14, 165, 233, 0.7);
+		outline-offset: .5rem;
+		border-radius: 100%;
+
+		/* position */
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10000;
+		pointer-events: none;
+
+		transition:
+			transform 0.1s ease-in-out, width 0.3s ease, height 0.3s ease-in-out,
+			background-color 0.3s ease, outline-color 0.3s ease-in-out;
+	}
+
+	.cursor-dot.active {
+		width: 0.6rem;
+		height: 0.6rem;
+		background-color: rgba(249, 115, 22, 0.9);
+		outline-color: rgba(234, 88, 12, 0.7);
+		outline-offset: 0.3rem;
+	}
 }
