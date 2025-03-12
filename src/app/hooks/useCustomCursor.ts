@@ -1,26 +1,40 @@
-"use client";
 import { useEffect, useRef } from "react";
 
 export function useCustomCursor() {
-    const cursorRef = useRef<HTMLDivElement | null>(null);
+    const cursorDotRef = useRef<HTMLDivElement | null>(null);
+    const cursorRingRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         function handleMouseMove(e: MouseEvent) {
-            if (cursorRef.current) {
-                cursorRef.current.style.left = `${e.clientX}px`;
-                cursorRef.current.style.top = `${e.clientY}px`;
+            if (cursorDotRef.current) {
+                cursorDotRef.current.style.left = `${e.clientX}px`;
+                cursorDotRef.current.style.top = `${e.clientY}px`;
+            }
+
+            if (cursorRingRef.current) {
+                cursorRingRef.current.animate([{ left: `${e.clientX}px`, top: `${e.clientY}px` }], {
+                    duration: 250,
+                    fill: "forwards",
+                    easing: "ease",
+                });
             }
         }
 
         function handleMouseDown() {
-            if (cursorRef.current) {
-                cursorRef.current.classList.add("active");
+            if (cursorDotRef.current) {
+                cursorDotRef.current.classList.add("active");
+            }
+            if (cursorRingRef.current) {
+                cursorRingRef.current.classList.add("active");
             }
         }
 
         function handleMouseUp() {
-            if (cursorRef.current) {
-                cursorRef.current.classList.remove("active");
+            if (cursorDotRef.current) {
+                cursorDotRef.current.classList.remove("active");
+            }
+            if (cursorRingRef.current) {
+                cursorRingRef.current.classList.remove("active");
             }
         }
 
@@ -35,5 +49,5 @@ export function useCustomCursor() {
         };
     }, []);
 
-    return { cursorRef };
+    return { cursorDotRef, cursorRingRef };
 }
