@@ -1,4 +1,4 @@
-import { HeroSection } from "./components/sections/hero/HeroSection";
+import { HeroWrapper } from "./components/sections/hero/HeroWrapper";
 import { ServicesSection } from "./components/sections/services/ServicesSection";
 import { LogosSection } from "./components/sections/logos/LogosSection";
 import { MasonryGrid } from "./components/layout/ui/Grid";
@@ -10,9 +10,10 @@ export default function HomePage() {
     return (
         <main className="pt-header-height">
             <CustomCursor />
-            <div className="hero-section-wrapper">
+            {/* <div className="hero-section-wrapper">
                 <HeroSection />
-            </div>
+            </div> */}
+            <HeroWrapper />
             <LogosSection />
             <ServicesSection />
             <MasonryGrid />

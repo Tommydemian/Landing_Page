@@ -26,7 +26,7 @@ export default {
             colors: {
                 heading: "var(--clr-heading)",
                 tag: "var(--clr-tag)",
-                "tag-box-border": "var(--clr-neutral-600)",
+                "tag-box-border": "rgba(255, 255, 255, 0.3)",
 
                 "body-inverse": "var(--clr-neutral-600)",
                 "body-clr": "var(--clr-body)",
@@ -38,6 +38,7 @@ export default {
                 secondary: "var(--clr-background-secondary)",
                 tertiary: "var(--clr-background-tertiary)",
                 accent: "var(--clr-primary-400)",
+                "soft-accent": "var(--clr-primary-300)",
             },
             backgroundImage: {
                 "list-icon": "linear-gradient(180deg, #242424 0%, rgba(36, 36, 36, 0) 100%)",

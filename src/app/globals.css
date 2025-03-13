@@ -91,15 +91,15 @@
 	--clr-neutral-150: #f5f5f5;
 	--clr-neutral-200: #e6e6e6;
 	/* --clr-neutral-250: #adadae; */
-	--clr-neutral-300: #98989a;
+	--clr-neutral-300: #a2a2a4;
 	--clr-neutral-400: #24242433;
 
 	--clr-neutral-500: #333333;
 	--clr-neutral-600: #262626;
 	--clr-neutral-700: #1a1a1a;
 	/* Primary */
-	--clr-primary-300: #d8ff99;
-	--clr-primary-400: #9eff00;
+	--clr-primary-300: #00f5d8;
+	--clr-primary-400: #00c6ae;
 
 	/* Semantic */
 	--clr-heading: var(--clr-neutral-100);
@@ -137,7 +137,7 @@
 	*::before,
 	*::after {
 		box-sizing: border-box;
-		cursor: none;
+		cursor: default;
 	}
 
 	body {
@@ -173,6 +173,8 @@
 
 @layer components {
 	#hero-section {
+		position: relative;
+		z-index: 10;
 		background-image: url("./components/sections/hero/hero-bg-img.webp");
 		background-size: 40rem 15rem;
 		background-repeat: no-repeat;
@@ -183,12 +185,12 @@
 			background-size: contain;
 		}
 	}
-	.hero-section-wrapper {
-		position: relative;
-		background-image: url("https://img.freepik.com/free-vector/grey-hexagons-black-background_78370-2098.jpg");
-		background-repeat: repeat;
+
+	.gradient-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, #1a1a1a, rgba(0, 0, 0, 1));
 		z-index: -1;
-		filter: hue-rotate(10deg);
 	}
 
 	.texture-bg {
@@ -197,7 +199,7 @@
 	}
 
 	.button-base {
-		@apply inline-flex justify-center items-center text-button font-semibold px-[0.75em] h-[var(--button-height)];
+		@apply inline-flex justify-center transition-all duration-300 ease-in-out items-center text-button font-semibold px-[0.75em] h-[var(--button-height)];
 	}
 
 	.bg-secondary-composition {
@@ -399,50 +401,52 @@
 		}
 	}
 
-	/* Cursor */
-	.cursor-dot {
-		width: 0.5rem;
-		height: 0.5rem;
-		background-color: rgba(125, 211, 252, 0.8);
-		border-radius: 100%;
+	@media screen and (min-width: 768px) {
+		/* Cursor */
+		.cursor-dot {
+			width: 0.5rem;
+			height: 0.5rem;
+			background-color: rgba(125, 211, 252, 0.8);
+			border-radius: 100%;
 
-		/* position */
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 10001;
-		pointer-events: none;
+			/* position */
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 10001;
+			pointer-events: none;
 
-		transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-	}
+			transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+		}
 
-	.cursor-ring {
-		width: 1.75rem;
-		height: 1.75rem;
-		border: 2px solid rgba(14, 165, 233, 0.7);
-		border-radius: 100%;
+		.cursor-ring {
+			width: 1.75rem;
+			height: 1.75rem;
+			border: 2px solid rgba(14, 165, 233, 0.7);
+			border-radius: 100%;
 
-		/* position */
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 10000;
-		pointer-events: none;
+			/* position */
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 10000;
+			pointer-events: none;
 
-		transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-	}
+			transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+		}
 
-	.cursor-dot.active {
-		width: 0.5rem;
-		height: 0.5rem;
-		background-color: rgba(249, 115, 22, 0.9);
-	}
+		.cursor-dot.active {
+			width: 0.5rem;
+			height: 0.5rem;
+			background-color: rgba(249, 115, 22, 0.9);
+		}
 
-	.cursor-ring.active {
-		width: 1rem;
-		height: 1rem;
-		border-color: rgba(234, 88, 12, 0.7);
+		.cursor-ring.active {
+			width: 1rem;
+			height: 1rem;
+			border-color: rgba(234, 88, 12, 0.7);
+		}
 	}
 }
