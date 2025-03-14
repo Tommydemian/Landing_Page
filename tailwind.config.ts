@@ -8,7 +8,9 @@ export default {
     ],
     theme: {
         fontSize: {
-            display: ["var(--fs-display-text)", { lineHeight: "var(--lh-display)" }],
+            display: ["3.5rem", { lineHeight: "var(--lh-display)" }],
+            // display-sm: ["3rem", { lineHeight: "var(--lh-display)" }],
+
             body: ["var(--fs-body-text)", { lineHeight: "var(--lh-body)" }],
             button: ["var(--fs-button-text)", { lineHeight: "1.2" }],
             "nav-link": ["var(--fs-nav-link-text)", { lineHeight: "1.5" }],
@@ -25,6 +27,7 @@ export default {
         extend: {
             colors: {
                 heading: "var(--clr-heading)",
+                subtitle: "#ffffffb3",
                 tag: "var(--clr-tag)",
                 "tag-box-border": "rgba(255, 255, 255, 0.3)",
 

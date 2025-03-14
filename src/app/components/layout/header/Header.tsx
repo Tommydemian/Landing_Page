@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 export const Header = () => {
     return (
         <header className="fixed top-0 left-0 z-10 w-full border-tag-box-border border-b px-4 backdrop-blur-md">
-            <Container className="header-container flex h-header items-center justify-between">
+            <Container className="flex h-header items-center justify-between">
                 <Logo />
                 {/* Navigation */}
                 <Navigation />

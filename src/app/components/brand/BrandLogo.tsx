@@ -2,12 +2,12 @@
 import { motion } from "motion/react";
 export const BrandLogo = () => (
     <motion.svg
-        initial={{ opacity: 0, rotate: "15deg", y: 30 }}
+        initial={{ opacity: 0, rotate: "30deg", y: -30 }}
         animate={{ opacity: 1, rotate: "0deg", y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         xmlns="http://www.w3.org/2000/svg"
-        width="100"
-        height="100"
+        width="75"
+        height="75"
         viewBox="0 0 192.756 192.756"
     >
         <title>brand logo</title>
