@@ -28,8 +28,8 @@ export const Header = () => {
                         htmlFor="menu-toggle"
                         className="header-checkbox__label grid cursor-pointer grid-cols-1 grid-rows-1"
                     >
-                        <X size={20} color="#d8ff99" className="x col-start-1 row-start-1 opacity-10" />
-                        <Menu size={20} color="#d8ff99" className="menu col-start-1 row-start-1" />
+                        <X size={20} color="#00E0C6" className="x col-start-1 row-start-1 opacity-10" />
+                        <Menu size={20} color="#00E0C6" className="menu col-start-1 row-start-1" />
                     </label>
                 </button>
             </Container>

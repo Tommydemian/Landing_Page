@@ -66,7 +66,7 @@ export const HeroSection = () => {
                     </motion.h1>
                     <motion.p
                         variants={parentVariant}
-                        className="max-w-[60ch] text-[1.5rem] text-subtitle leading-tight"
+                        className="fluid-subtitle-fs max-w-[60ch] text-subtitle leading-tight"
                     >
                         Blending 8+ years of technical expertise with strategic insight to transform business challenges
                         into digital opportunities

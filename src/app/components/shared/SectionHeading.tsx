@@ -6,7 +6,7 @@ import type { JSX } from "react";
 
 interface Props {
     headingText: string;
-    subheadingText: string;
+    subheadingText?: string;
     n: number;
     logo?: string | JSX.Element;
     buttonText?: string;
@@ -17,7 +17,7 @@ export const SectionHeading = ({ headingText, n, subheadingText, logo, buttonLin
     return (
         <div
             className={cn(
-                "services-heading__wrapper relative flex w-full flex-col items-center justify-center gap-10 py-[3.125em]",
+                "relative flex w-full flex-col items-center justify-center pb-10",
                 `service-heading__wrapper-${n}`,
             )}
         >
@@ -27,9 +27,9 @@ export const SectionHeading = ({ headingText, n, subheadingText, logo, buttonLin
                 <div>{logo}</div>
             )}
 
-            <div className="relative z-10">
+            <div className="relative z-10 space-y-4">
                 <MainHeading>{headingText}</MainHeading>
-                <p className="fluid-body-fs max-w-[none] text-center text-body-clr">{subheadingText}</p>
+                <p className="fluid-subtitle-fs max-w-[none] text-center text-body-clr">{subheadingText}</p>
             </div>
             <div>{buttonLink && <Link linkUrl={buttonLink}>{buttonText}</Link>}</div>
         </div>

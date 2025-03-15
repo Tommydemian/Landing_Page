@@ -8,8 +8,11 @@ export default {
     ],
     theme: {
         fontSize: {
-            display: ["3.5rem", { lineHeight: "var(--lh-display)" }],
-            // display-sm: ["3rem", { lineHeight: "var(--lh-display)" }],
+            display: ["var(--fs-display-text)", { lineHeight: "var(--lh-display)" }],
+
+            "subtitle-sm": ["var(--fs-subtitle-sm)", { lineHeight: "var(--lh-display)" }],
+            "subtitle-md": ["var(--fs-subtitle-md)", { lineHeight: "var(--lh-display)" }],
+            "subtitle-lg": ["var(--fs-subtitle-lg)", { lineHeight: "var(--lh-display)" }],
 
             body: ["var(--fs-body-text)", { lineHeight: "var(--lh-body)" }],
             button: ["var(--fs-button-text)", { lineHeight: "1.2" }],
